@@ -23,26 +23,31 @@ body {
 
 /* Header */
 h1 {
-  margin: 0 0 10px 0;
-  font-size: 24px;
+  margin: 0 0 20px 0;
+  font-size: 26px;
   color: #333;
 }
 
 /* Address blocks */
 .address-block {
-  margin-bottom: 20px;
   font-size: 14px;
   line-height: 1.4;
+  margin-bottom: 20px;
 }
 .address-block strong {
   font-size: 15px;
+}
+
+/* Client aligned right */
+.client {
+  text-align: right;
 }
 
 /* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 14px;
 }
 table th, table td {
@@ -72,20 +77,20 @@ table th {
 
   <!-- Seller -->
   <div class="address-block">
-    <strong>Entreprise :</strong><br>
-    TechStore France<br>
+    <strong>TechStore France</strong><br>
     12 Rue des Machines<br>
     69007 Lyon<br>
     contact@techstore.fr<br>
     04 72 00 00 00
   </div>
 
-  <!-- Customer -->
-  <div class="address-block">
+  <!-- Client (right aligned) -->
+  <div class="address-block client">
     <strong>Client :</strong><br>
-    {{nom_client}}<br>
-    {{adresse_client}}<br>
-    {{code_postal}} {{ville_client}}
+    Jean Dupont<br>
+    45 Avenue des Lumières<br>
+    75015 Paris<br>
+    France
   </div>
 
   <!-- Product table -->
@@ -114,12 +119,19 @@ table th {
         <td>49.00</td>
         <td>49.00</td>
       </tr>
+      <tr>
+        <td>Clavier Mécanique</td>
+        <td>Switch Red · Rétroéclairage</td>
+        <td>1</td>
+        <td>89.00</td>
+        <td>89.00</td>
+      </tr>
     </tbody>
   </table>
 
   <!-- Total -->
   <div class="total">
-    Total à payer : 948.00 €
+    Total à payer : 1 037.00 €
   </div>
 
 </div>

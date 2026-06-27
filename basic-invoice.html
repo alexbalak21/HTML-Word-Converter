@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Facture - A4</title>
+<link rel="stylesheet" href="invoice.css">
+</head>
+
+<body>
+<div class="page">
+
+  <!-- Header with logo -->
+  <div class="header">
+    <div class="title">INVOICE</div>
+    <img src="logo.svg" class="logo" alt="Company Logo">
+    <div class="clearfix"></div>
+  </div>
+
+  <!-- Seller -->
+  <div class="address-block">
+    <strong>Company Name</strong><br>
+    12 Rue des Machines<br>
+    69007 Lyon<br>
+    Phone: (000) 000-0000
+  </div>
+
+  <!-- Invoice info -->
+  <table class="info-table">
+    <tr>
+      <th>INVOICE #</th>
+      <th>DATE</th>
+    </tr>
+    <tr>
+      <td>123456</td>
+      <td>05/01/2024</td>
+    </tr>
+  </table>
+
+  <!-- Client (right aligned) -->
+  <div class="address-block client">
+    <strong>BILL TO</strong><br>
+    Jean Dupont<br>
+    Dupont Industries<br>
+    45 Avenue des Lumières<br>
+    75015 Paris<br>
+    Phone: 06 00 00 00 00<br>
+    Email: jean.dupont@example.com
+  </div>
+
+  <!-- Product table -->
+  <table class="items-table">
+    <thead>
+      <tr>
+        <th>DESCRIPTION</th>
+        <th>AMOUNT (€)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Service Fee</td>
+        <td>200.00</td>
+      </tr>
+      <tr>
+        <td>Labor: 5 hours at 75€/hr</td>
+        <td>375.00</td>
+      </tr>
+      <tr>
+        <td>New client discount</td>
+        <td>-50.00</td>
+      </tr>
+      <tr>
+        <td>Tax (4.25% after discount)</td>
+        <td>26.56</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Total -->
+  <div class="total">
+    TOTAL : 551.56 €
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Thank you for your business!<br>
+    If you have any questions about this invoice, please contact:<br>
+    Jean Dupont — jean.dupont@example.com — 06 00 00 00 00
+  </div>
+
+</div>
+</body>
+</html>

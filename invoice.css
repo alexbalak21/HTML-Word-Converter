@@ -1,0 +1,109 @@
+/* A4 page setup */
+@page { size: A4; margin: 20mm; }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+}
+
+.page {
+  width: 794px; /* A4 width at 96dpi */
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* Header with logo */
+.header {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.title {
+  float: left;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logo {
+  float: right;
+  width: 120px;
+  height: auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* Address blocks */
+.address-block {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.address-block strong {
+  font-size: 15px;
+}
+
+/* Client aligned right */
+.client {
+  text-align: right;
+}
+
+/* Invoice info table */
+.info-table {
+  width: 300px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.info-table th,
+.info-table td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+}
+
+.info-table th {
+  background: #f2f2f2;
+  text-align: left;
+}
+
+/* Product table */
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.items-table th,
+.items-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.items-table th {
+  background: #f2f2f2;
+  text-align: left;
+}
+
+/* Totals */
+.total {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #555;
+}
