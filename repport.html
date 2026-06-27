@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Rapport d'essais NOVOCIB</title>
+
+<style>
+/* --- A4 PAGE SETUP --- */
+@page {
+  size: A4;
+  margin: 20mm;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+.page {
+  width: 794px; /* A4 width at 96dpi */
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* --- HEADER --- */
+.header {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.header-left {
+  float: left;
+  width: 60%;
+}
+.header-right {
+  float: right;
+  width: 35%;
+  text-align: right;
+}
+.header-left h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #003366;
+}
+.header-left p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: #555;
+}
+.header-right .afnor {
+  font-size: 18px;
+  font-weight: bold;
+  color: #003366;
+}
+.header-right .norm {
+  font-size: 12px;
+  color: #777;
+}
+.clearfix {
+  clear: both;
+}
+
+/* --- REPORT META --- */
+.report-meta {
+  background: #f5f8fc;
+  border-left: 4px solid #003366;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+.report-meta h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.report-meta p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+/* --- RECIPIENT --- */
+.recipient {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+/* --- SECTION TITLES --- */
+.section-title {
+  font-size: 16px;
+  color: #003366;
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 4px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* --- TABLES --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+table th, table td {
+  border: 1px solid #dcdcdc;
+  padding: 8px;
+  vertical-align: top;
+}
+table th {
+  background: #eef3f9;
+  font-weight: bold;
+  color: #003366;
+}
+
+/* --- VALIDATION --- */
+.validation {
+  background: #f2fff4;
+  border-left: 4px solid #2e7d32;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* --- SIGNATURE --- */
+.signature {
+  margin-top: 30px;
+  font-size: 13px;
+}
+.signature .name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* --- PAGE NUMBER --- */
+.page-number {
+  text-align: right;
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1>NOVOCIB</h1>
+      <p>nucleoside metabolism explorer</p>
+      <p>Criée Boulogne · Halle à Marée Quai Jean Voisin · 62200 BOULOGNE-SUR-MER</p>
+      <p>Ligne tél. directe : 06 31 44 68 05 · labo@novocib.com</p>
+    </div>
+
+    <div class="header-right">
+      <div class="afnor">afnor</div>
+      <div class="norm">NORMALISATION</div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+  <!-- REPORT META -->
+  <div class="report-meta">
+    <h2>Rapport d'essais numéro ° NOVOCIB {{numéro_rapport}}</h2>
+    <p>Date de rapport : du {{date_rapport}}</p>
+    <p>{{appellation_produit}}</p>
+  </div>
+
+  <!-- RECIPIENT -->
+  <div class="recipient">
+    <p>{{nom_entreprise_client}}</p>
+    <p>{{adresse_entreprise_client}}</p>
+    <p>A l'attention de {{nom_destinataire}}</p>
+    <p>{{titre_poste_destinataire}}</p>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-title">Caractéristiques de l'échantillon</div>
+
+  <table>
+    <tr>
+      <th>Date et lieu de prélèvement :</th>
+      <td>{{Lieu_de_prelevement}} {{date_heure_prelevement}} {{adresse_prelevement}} {{ville_prelevement}}</td>
+      <th>Conditions de conservation à la réception :</th>
+      <td>{{conditions_coservation_reception}}</td>
+    </tr>
+    <tr>
+      <th>Date, heure et T°C à la réception au laboratoire :</th>
+      <td>{{date_heure_arrive_labo}} {{temperature_reception}}</td>
+      <th>Date de mise en analyse :</th>
+      <td>{{date_heure_mise_en_analyse}}</td>
+    </tr>
+  </table>
+
+  <!-- SECTION 2 -->
+  <div class="section-title">Identification de l'échantillon (données fournies par le client)</div>
+
+  <table>
+    <tr>
+      <th>Fournisseur/Fabricant :</th>
+      <td>{{fournisseur_fabricant}}</td>
+      <th>Nom de produit :</th>
+      <td>{{nom_produit}}</td>
+    </tr>
+    <tr>
+      <th>Conditionnement :</th>
+      <td>{{conditionnement}}</td>
+      <th>Espèce :</th>
+      <td>{{espece}}</td>
+    </tr>
+    <tr>
+      <th>Agrément :</th>
+      <td>{{agrement}}</td>
+      <th>Origine :</th>
+      <td>{{origine}}</td>
+    </tr>
+    <tr>
+      <th>Lot :</th>
+      <td>{{lot}}</td>
+      <th>Date d'emballage :</th>
+      <td>{{date_emabalage}}</td>
+    </tr>
+    <tr>
+      <th>Code article :</th>
+      <td>{{code_article}}</td>
+      <th>A consommer jusqu'au :</th>
+      <td>{{dlc}}</td>
+    </tr>
+  </table>
+
+  <!-- SECTION 3 -->
+  <div class="section-title">Résultats des essais physico-chimiques</div>
+
+  <table>
+    <tr>
+      <th>Nº Ech</th>
+      <th>Lot | Date Fab. | DLC</th>
+      <th>Essai (méthode)</th>
+      <th>Résultat (incertitude)</th>
+      <th>Unité</th>
+      <th>Critère qualité</th>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>PRECICE® Nucleotides Assay kit (NOVOCIB) Lot {{lot_precice}}</td>
+      <td>Méthode enzymatique colorimétrique de dosage de trois nucléotides IMP, Inosine et hypoxanthine AFNOR XP V45-077 (2025)</td>
+      <td>IMP {{imp}}% · K-value {{k_value}}</td>
+      <td>Molar %</td>
+      <td>
+        Sashimi : IMP &gt;90% / K-value &lt;10%  
+        Extra : IMP 65-90% / K-value 10-35%  
+        A : IMP 40-65% / K-value 35-60%  
+        B : IMP &lt;40% / K-value &gt;60%
+      </td>
+    </tr>
+  </table>
+
+  <!-- VALIDATION -->
+  <div class="validation">
+    <p>Résultat(s) : {{conformite}}</p>
+    <p>Qualité : {{qualite}}</p>
+  </div>
+
+  <!-- SIGNATURE -->
+  <div class="signature">
+    <p>Boulogne sur Mer, le {{date_du_jour}}</p>
+    <p class="name">BALAKIREVA Larissa, PhD</p>
+    <p>Responsable de laboratoire</p>
+  </div>
+
+  <div class="page-number">Page 1/1</div>
+
+</div>
+</body>
+</html>

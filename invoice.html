@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Facture - A4</title>
+
+<style>
+/* A4 page setup */
+@page { size: A4; margin: 20mm; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #222;
+}
+.page {
+  width: 794px; /* A4 width at 96dpi */
+  margin: 0 auto;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* Header */
+h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Address blocks */
+.address-block {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.address-block strong {
+  font-size: 15px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+table th {
+  background: #f2f2f2;
+  text-align: left;
+}
+
+/* Totals */
+.total {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: right;
+  font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <h1>Facture</h1>
+
+  <!-- Seller -->
+  <div class="address-block">
+    <strong>Entreprise :</strong><br>
+    TechStore France<br>
+    12 Rue des Machines<br>
+    69007 Lyon<br>
+    contact@techstore.fr<br>
+    04 72 00 00 00
+  </div>
+
+  <!-- Customer -->
+  <div class="address-block">
+    <strong>Client :</strong><br>
+    {{nom_client}}<br>
+    {{adresse_client}}<br>
+    {{code_postal}} {{ville_client}}
+  </div>
+
+  <!-- Product table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Produit</th>
+        <th>Description</th>
+        <th>Quantité</th>
+        <th>Prix Unitaire (€)</th>
+        <th>Total (€)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PC Portable</td>
+        <td>Intel i7 · 16GB RAM · 512GB SSD</td>
+        <td>1</td>
+        <td>899.00</td>
+        <td>899.00</td>
+      </tr>
+      <tr>
+        <td>Souris Gaming</td>
+        <td>RGB · 7200 DPI</td>
+        <td>1</td>
+        <td>49.00</td>
+        <td>49.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Total -->
+  <div class="total">
+    Total à payer : 948.00 €
+  </div>
+
+</div>
+</body>
+</html>

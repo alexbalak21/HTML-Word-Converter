@@ -1,9 +1,10 @@
 import docwow
 
-html = open("page.html").read()
+with open("report_template.html", "r", encoding="utf-8") as f:
+    html = f.read()
 
 docwow.to_docx(
     html,
     "output.docx",
-    is_foreign_html=True   # important for arbitrary HTML
+    is_foreign_html=True
 )

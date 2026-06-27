@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=794" />
+<title>Rapport d'essais - NOVOCIB</title>
+<style>
+  /* Page / print setup for A4 */
+  @page { size: A4; margin: 20mm; }
+  html, body {
+    width: 794px; /* A4 width at 96dpi */
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #222;
+    background: #fff;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* Layout */
+  .page {
+    box-sizing: border-box;
+    padding: 28px 36px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .brand {
+    line-height: 1;
+  }
+  .brand h1 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.6px;
+  }
+  .brand p {
+    margin: 2px 0;
+    font-size: 12px;
+    color: #555;
+  }
+  .logo {
+    width: 120px;
+    height: 60px;
+    background: #f2f2f2;
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 60px;
+    color: #888;
+    font-size: 12px;
+  }
+
+  /* Report title block */
+  .report-meta {
+    border-left: 4px solid #0078d4;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    background: #fbfdff;
+  }
+  .report-meta h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .report-meta .small {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+  }
+
+  /* Recipient block */
+  .recipient {
+    margin: 12px 0 22px 0;
+    padding: 12px;
+    background: #f8f9fb;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222;
+  }
+  .recipient .to {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  /* Section headings */
+  h3.section-title {
+    font-size: 14px;
+    margin: 18px 0 8px 0;
+    color: #0b3b5a;
+    border-bottom: 1px solid #e9eef3;
+    padding-bottom: 6px;
+  }
+
+  /* Tables */
+  table.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  table.report-table th,
+  table.report-table td {
+    padding: 8px 10px;
+    border: 1px solid #e6eef6;
+    vertical-align: top;
+  }
+  table.report-table th {
+    background: #f3f8ff;
+    font-weight: 700;
+    color: #0b3b5a;
+    text-align: left;
+    width: 25%;
+  }
+  table.report-table td.placeholder {
+    color: #1a73a8;
+    font-weight: 600;
+  }
+
+  /* Wide results table */
+  .results-table th {
+    text-align: left;
+    font-size: 12px;
+  }
+  .results-table td {
+    font-size: 13px;
+  }
+
+  /* Footer / validation */
+  .validation {
+    margin-top: 18px;
+    padding: 12px;
+    border-left: 4px solid #2e7d32;
+    background: #f6fffa;
+  }
+  .signature {
+    margin-top: 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .signature .sign-block {
+    text-align:left;
+    font-size:13px;
+  }
+  .page-number {
+    text-align:right;
+    font-size:12px;
+    color:#888;
+    margin-top:8px;
+  }
+
+  /* Utility */
+  .muted { color:#666; font-size:12px; }
+  .small { font-size:12px; color:#666; }
+  .bold { font-weight:700; color:#111; }
+
+  /* Print-friendly page break */
+  .page-break { page-break-after: always; }
+
+  /* Responsive fallback for preview */
+  @media (max-width: 820px) {
+    html, body { width: 100%; padding: 12px; }
+    .page { border: none; padding: 16px; }
+  }
+</style>
+</head>
+<body>
+  <div class="page" role="document" aria-label="Rapport d'essais NOVOCIB">
+    <header>
+      <div class="brand" aria-hidden="false">
+        <div class="logo">LOGO</div>
+        <h1>NOVOCIB</h1>
+        <p class="muted">nucleoside metabolism explorer</p>
+        <p class="small">Criée Boulogne · Halle à Marée Quai Jean Voisin · 62200 BOULOGNE-SUR-MER</p>
+        <p class="small">Tél: 06 31 44 68 05 · labo@novocib.com</p>
+      </div>
+
+      <div style="text-align:right;">
+        <div style="font-weight:700; color:#0b3b5a;">afnor</div>
+        <div class="muted">NORMALISATION</div>
+      </div>
+    </header>
+
+    <section class="report-meta" aria-labelledby="reportTitle">
+      <h2 id="reportTitle">Rapport d'essais numéro ° NOVOCIB <span class="bold">{{numéro_rapport}}</span></h2>
+      <div class="small">Date de rapport : du <span class="bold">{{date_rapport}}</span></div>
+      <div class="small">Appellation produit : <span class="bold">{{appellation_produit}}</span></div>
+    </section>
+
+    <section class="recipient" aria-label="Destinataire">
+      <div class="to">À l'attention de : <span class="bold">{{nom_destinataire}}</span></div>
+      <div class="small">{{titre_poste_destinataire}}</div>
+      <div class="small" style="margin-top:8px;">
+        <div class="muted">{{nom_entreprise_client}}</div>
+        <div class="muted">{{adresse_entreprise_client}}</div>
+      </div>
+    </section>
+
+    <h3 class="section-title">Caractéristiques de l'échantillon</h3>
+    <table class="report-table" role="table" aria-label="Caractéristiques de l'échantillon">
+      <tr>
+        <th>Date et lieu de prélèvement :</th>
+        <td class="placeholder">{{Lieu_de_prelevement}} · {{date_heure_prelevement}} · {{adresse_prelevement}} · {{ville_prelevement}}</td>
+        <th>Conditions de conservation à la réception :</th>
+        <td class="placeholder">{{conditions_coservation_reception}}</td>
+      </tr>
+      <tr>
+        <th>Date, heure et T°C à la réception au laboratoire :</th>
+        <td class="placeholder">{{date_heure_arrive_labo}} · {{temperature_reception}}</td>
+        <th>Date de mise en analyse :</th>
+        <td class="placeholder">{{date_heure_mise_en_analyse}}</td>
+      </tr>
+    </table>
+
+    <h3 class="section-title">Identification de l'échantillon (données fournies par le client)</h3>
+    <table class="report-table" role="table" aria-label="Identification de l'échantillon">
+      <tr>
+        <th>Fournisseur / Fabricant :</th>
+        <td class="placeholder">{{fournisseur_fabricant}}</td>
+        <th>Nom de produit :</th>
+        <td class="placeholder">{{nom_produit}}</td>
+      </tr>
+      <tr>
+        <th>Conditionnement :</th>
+        <td class="placeholder">{{conditionnement}}</td>
+        <th>Espèce :</th>
+        <td class="placeholder">{{espece}}</td>
+      </tr>
+      <tr>
+        <th>Agrément :</th>
+        <td class="placeholder">{{agrement}}</td>
+        <th>Origine :</th>
+        <td class="placeholder">{{origine}}</td>
+      </tr>
+      <tr>
+        <th>Lot :</th>
+        <td class="placeholder">{{lot}}</td>
+        <th>Date d'emballage :</th>
+        <td class="placeholder">{{date_emabalage}}</td>
+      </tr>
+      <tr>
+        <th>Code article :</th>
+        <td class="placeholder">{{code_article}}</td>
+        <th>A consommer jusqu'au :</th>
+        <td class="placeholder">{{dlc}}</td>
+      </tr>
+    </table>
+
+    <h3 class="section-title">Résultats des essais physico-chimiques</h3>
+    <table class="report-table results-table" role="table" aria-label="Résultats des essais physico-chimiques">
+      <thead>
+        <tr>
+          <th>Nº Ech</th>
+          <th>Lot | Date Fab. | DLC</th>
+          <th>Essai (méthode)</th>
+          <th>Résultat (incertitude)</th>
+          <th>Unité</th>
+          <th>Critère qualité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">3</td>
+          <td>PRECICE® Nucleotides Assay kit (NOVOCIB) Lot <span class="placeholder">{{lot_precice}}</span></td>
+          <td>Méthode enzymatique colorimétrique de dosage de trois nucléotides IMP, Inosine et hypoxanthine AFNOR XP V45-077 (2025)</td>
+          <td class="placeholder">IMP {{imp}}% · K-value {{k_value}}</td>
+          <td>Molar %</td>
+          <td class="small">
+            Sashimi : IMP &gt;90% / K-value &lt;10% · Extra : IMP 65-90% / K-value 10-35% ·
+            A : IMP 40-65% / K-value 35-60% · B : IMP &lt;40% / K-value &gt;60%
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="validation" aria-label="Validation">
+      <div><span class="bold">VALIDATION</span></div>
+      <div style="margin-top:8px;">Résultat(s) : <span class="placeholder">{{conformite}}</span></div>
+      <div>Qualité : <span class="placeholder">{{qualite}}</span></div>
+    </div>
+
+    <div class="signature">
+      <div class="sign-block">
+        <div class="small">Boulogne sur Mer, le <span class="placeholder">{{date_du_jour}}</span></div>
+        <div style="margin-top:12px; font-weight:700;">BALAKIREVA Larissa, PhD</div>
+        <div class="small">Responsable de laboratoire</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="small">Page <span class="page-number">1/1</span></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
